@@ -6,8 +6,11 @@
 	<title>Redirecting...</title>
 	<script>
 		let urlParams = new URLSearchParams(window.location.search);
-		const sites = urlParams.get('rand').split(',');
-
+		const params = urlParams.get('rand');
+		let sites = [];
+		if (params) {
+			sites = params.split(',');
+		}
 		function randomSite() {
 			if (sites.length) {
 				let i = parseInt(Math.random() * sites.length);
