@@ -2,22 +2,17 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>Redirecting...</title>
 		<script>
-		    var sites = [
-		        'https://goo.gl/forms/jZ8EIn7BDbxckS2n2',
-		        'https://goo.gl/forms/x5NMP9EZo4c6a6Mz2',
-		        'https://goo.gl/forms/ZU0AsdXCmMeBnxmF3'
-		    ];
+			let urlParams = new URLSearchParams(window.location.search);
+			const sites = urlParams.get('rand').split(',');
 
 		    function randomSite() {
 		        var i = parseInt(Math.random() * sites.length);
-		        location.href = sites[i];
+		        location.replace(sites[i]);
 		    }
 		</script>
 	</head>
 	<body onload="randomSite()">
-
-
 	</body>
 </html>
