@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-	<head>
-		<meta charset="utf-8">
-		<title>Redirecting...</title>
-		<script>
-			let urlParams = new URLSearchParams(window.location.search);
-			const sites = urlParams.get('rand').split(',');
 
-		    function randomSite() {
-		        var i = parseInt(Math.random() * sites.length);
-		        location.replace(sites[i]);
-		    }
-		</script>
-	</head>
-	<body onload="randomSite()">
-	</body>
+<head>
+	<meta charset="utf-8">
+	<title>Redirecting...</title>
+	<script>
+		let urlParams = new URLSearchParams(window.location.search);
+		const sites = urlParams.get('rand').split(',');
+
+		function randomSite() {
+			if (sites.length) {
+				let i = parseInt(Math.random() * sites.length);
+				location.replace(sites[i]);
+			} else {
+				location.replace("https://it.wikipedia.org/wiki/Speciale:PaginaCasuale");
+			}
+		}
+	</script>
+</head>
+
+<body onload="randomSite()">
+</body>
+
 </html>
